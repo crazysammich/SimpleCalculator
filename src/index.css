@@ -6,7 +6,7 @@
   --background-tertiary: #181f32;
 
   --font-size-primary: 2rem;
-  --font-size-primary: 0.625rem;
+  --font-size-secondary: 0.625rem;
 
   --text-primary: #484e61;
   --text-secondary: #fff8ff;
@@ -38,12 +38,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--background-primary);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 button {

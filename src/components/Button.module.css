@@ -2,5 +2,7 @@
   cursor: pointer;
   outline: 0;
   border: 0;
+  font-size: var(--font-size-primary);
+  border-radius: 5px;
   padding: 1rem 2.5rem;
 }

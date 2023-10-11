@@ -34,8 +34,8 @@ function ThemesButton() {
         </div>
       ))}
       {themesNames.map((name) => (
-        <div>
-          <Button key={randkey()} value={name} onClick={handleThemeClick} />
+        <div key={randkey()}>
+          <Button value={name} onClick={handleThemeClick} />
         </div>
       ))}
     </div>

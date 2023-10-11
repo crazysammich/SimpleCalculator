@@ -1,0 +1,36 @@
+.btn-num {
+  color: var(--text-primary);
+  background-color: var(--btn-primary);
+  box-shadow: var(--btn-shadow-offset) var(--btn-shadow-primary);
+}
+
+.btn-num--0 {
+  grid-area: num-0;
+}
+.btn-num--1 {
+  grid-area: num-1;
+}
+.btn-num--2 {
+  grid-area: num-2;
+}
+.btn-num--3 {
+  grid-area: num-3;
+}
+.btn-num--4 {
+  grid-area: num-4;
+}
+.btn-num--5 {
+  grid-area: num-5;
+}
+.btn-num--6 {
+  grid-area: num-6;
+}
+.btn-num--7 {
+  grid-area: num-7;
+}
+.btn-num--8 {
+  grid-area: num-8;
+}
+.btn-num--9 {
+  grid-area: num-9;
+}

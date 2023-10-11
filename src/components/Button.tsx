@@ -12,16 +12,11 @@ interface ButtonProps {
 function Button(props: ButtonProps) {
   const { value, type, children, className, onClick } = props;
   const classes = `${styles.btn} ${className ? className : ""}`;
-  const defaultType = type ? type : "button";
+  const defType = type ? type : "button";
   return (
-    <Button
-      type={defaultType}
-      className={classes}
-      value={value}
-      onClick={onClick}
-    >
+    <button type={defType} className={classes} value={value} onClick={onClick}>
       {children}
-    </Button>
+    </button>
   );
 }
 
