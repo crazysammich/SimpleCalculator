@@ -1,0 +1,10 @@
+.calc-btns {
+  display: grid;
+  grid-template-columns: repeat(4, 6.3rem);
+  grid-template-areas:
+    "num-7 num-8 num-9 del"
+    "num-4 num-5 num-6 plus"
+    "num-1 num-2 num-3 minus"
+    "dec num-0 div mult";
+  background-color: var(--background-secondary);
+}
