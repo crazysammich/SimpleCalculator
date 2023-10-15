@@ -1,0 +1,6 @@
+.btn-equal {
+  grid-area: equal;
+  color: var(--text-tertiary);
+  background-color: var(--btn-tertiary);
+  box-shadow: var(--btn-shadow-offset) var(--btn-shadow-tertiary);
+}
