@@ -24,6 +24,7 @@
 
   /* button shadow position */
   --btn-shadow-offset: 0 4px 0;
+  --btn-border-radius: 10px;
 
   /* button shadow color */
   --btn-shadow-primary: #b6a49a;
@@ -33,7 +34,7 @@
   font-size: 1rem;
   font-family: "League Spartan", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 700;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -41,9 +42,11 @@
 }
 
 button {
+  cursor: pointer;
   font-family: "League Spartan", sans-serif;
+  font-size: var(--font-size-primary);
+  font-weight: 700;
 }
-
 * {
   margin: 0;
   padding: 0;
