@@ -1,0 +1,13 @@
+.btn-fnc {
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  background-color: var(--btn-secondary);
+  box-shadow: var(--btn-shadow-offset) var(--btn-shadow-secondary);
+}
+
+.btn-fnc--del {
+  grid-area: del;
+}
+.btn-fnc--reset {
+  grid-area: reset;
+}
