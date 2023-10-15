@@ -1,18 +1,18 @@
-// import { Fragment } from "react";
-import styles from "./App.module.css";
+import { Fragment } from "react";
+// import styles from "./App.module.css";
 import ThemesButton from "./components/ThemesButton";
 import Calculator from "./components/Calculator";
 
 function App() {
   return (
-    <div className={styles.app}>
+    <Fragment>
       <header>
         <ThemesButton />
       </header>
       <main>
         <Calculator />
       </main>
-    </div>
+    </Fragment>
   );
 }
 
