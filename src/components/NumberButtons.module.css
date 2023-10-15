@@ -4,6 +4,10 @@
   box-shadow: var(--btn-shadow-offset) var(--btn-shadow-primary);
 }
 
+.btn-num:hover {
+  background-color: var(--btn-hover-primary);
+}
+
 .btn-num--0 {
   grid-area: num-0;
 }
@@ -33,4 +37,7 @@
 }
 .btn-num--9 {
   grid-area: num-9;
+}
+.btn-num--dec {
+  grid-area: dec;
 }
