@@ -23,11 +23,6 @@ function Calculator() {
     currentOperation,
     previousOperand
   );
-
-  // const [calcOutput, setCalcOutput] = useState("0");
-  // const currentOperator = useRef("");
-  // const currentOperand = useRef("0");
-  // const previousOperand = useRef("0");
   const errMessage = "Result is undefined";
   const isComputationSuccess = useRef(false);
 
@@ -50,26 +45,6 @@ function Calculator() {
     setPreviousOperand(currentOperand);
     setCurrentOperation(operator);
   }
-  // function handleOperationBtnClick(e: MouseEvent<HTMLButtonElement>) {
-  //   const operator = e.currentTarget.value;
-  //   if (currentOperator.current) {
-  //     const result = computeOperation(
-  //       previousOperand.current,
-  //       currentOperand.current,
-  //       currentOperator.current
-  //     );
-  //     previousOperand.current = result;
-  //     currentOperand.current = "";
-  //     currentOperator.current = operator;
-  //     setCalcOutput(result.concat(operator));
-  //     return;
-  //   }
-  //   isComputationSuccess.current = false;
-  //   currentOperator.current = operator;
-  //   previousOperand.current = currentOperand.current;
-  //   currentOperand.current = "0";
-  //   setCalcOutput((prevOutput) => prevOutput.concat(operator));
-  // }
 
   function handleNumberBtnClick(e: MouseEvent<HTMLButtonElement>) {
     const number = e.currentTarget.value;
@@ -92,32 +67,6 @@ function Calculator() {
       formatNumWithComma(prevOperand.concat(number))
     );
   }
-  // function handleNumberBtnClick(e: MouseEvent<HTMLButtonElement>) {
-  //   const number = e.currentTarget.value;
-  //   if (currentOperand.current.includes(".") && number === ".") {
-  //     return;
-  //   }
-
-  //   if (number === "." && calcOutput === "0") {
-  //     currentOperand.current = currentOperand.current.concat(number);
-  //     setCalcOutput((prevOutput) => prevOutput.concat(number));
-  //     return;
-  //   }
-
-  //   if (calcOutput === "0" || isComputationSuccess.current) {
-  //     isComputationSuccess.current = false;
-  //     currentOperand.current = number;
-  //     setCalcOutput(number);
-  //     return;
-  //   }
-
-  //   currentOperand.current = currentOperand.current.concat(number);
-  //   setCalcOutput(
-  //     `${formatNumWithComma(currentOperand.current)}${currentOperator.current}${
-  //       previousOperand.current
-  //     }`
-  //   );
-  // }
 
   function handleOnFunctionBtnClick(e: MouseEvent<HTMLButtonElement>) {
     const value = e.currentTarget.value;
@@ -144,33 +93,6 @@ function Calculator() {
       return;
     }
   }
-  // function handleOnFunctionBtnClick(e: MouseEvent<HTMLButtonElement>) {
-  //   const value = e.currentTarget.value;
-  //   if (calcOutput === "0") return;
-  //   if (calcOutput === errMessage) {
-  //     setCalcOutput("0");
-  //     return;
-  //   }
-  //   if (value === "del") {
-  //     setCalcOutput((prevOutput) => {
-  //       if (prevOutput.length === 1) {
-  //         return "0";
-  //       }
-  //       return prevOutput.slice(0, -1);
-  //     });
-  //     currentOperator.current = "";
-  //     currentOperand.current = currentOperand.current.slice(0, -1);
-  //     return;
-  //   }
-  //   if (value === "reset") {
-  //     isComputationSuccess.current = false;
-  //     currentOperator.current = "";
-  //     currentOperand.current = "0";
-  //     previousOperand.current = "0";
-  //     setCalcOutput("0");
-  //     return;
-  //   }
-  // }
 
   function handleOnSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -188,23 +110,7 @@ function Calculator() {
     setPreviousOperand("");
     setCurrentOperand(result);
   }
-  // function handleOnSubmit(e: FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
 
-  //   if (previousOperand.current === "0" || calcOutput === "0") {
-  //     return;
-  //   }
-  //   const result = computeOperation(
-  //     previousOperand.current,
-  //     currentOperand.current,
-  //     currentOperator.current
-  //   );
-  //   isComputationSuccess.current = true;
-  //   currentOperator.current = "";
-  //   previousOperand.current = "0";
-  //   currentOperand.current = result;
-  //   setCalcOutput(result);
-  // }
   function handleOnDisplayChange(e: ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
   }
