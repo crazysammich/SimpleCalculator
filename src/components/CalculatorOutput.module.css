@@ -1,0 +1,17 @@
+.calc-output {
+  outline: 0;
+  border: 0;
+  text-align: right;
+  font-size: var(--font-size-primary);
+  color: var(--input-color-primary);
+  border-radius: 10px;
+  background-color: var(--background-tertiary);
+  padding-block: 2.5rem 3rem;
+  padding-inline: 2.1rem;
+}
+
+@media screen and (max-width: 31em) {
+  .calc-output {
+    padding-block: 1.625rem 2rem;
+  }
+}
