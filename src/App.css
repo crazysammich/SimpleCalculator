@@ -1,3 +1,6 @@
-.app {
-  min-height: 100vh;
+#root {
+  display: grid;
+  grid-template-columns: 1fr minmax(20rem, 33.7rem) 1fr;
+  grid-template-rows: minmax(6.5rem, 10.75rem) 4fr 1fr;
+  column-gap: 1.5rem;
 }

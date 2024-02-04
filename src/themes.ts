@@ -8,6 +8,7 @@ interface Theme {
     primary: string;
     secondary: string;
     tertiary: string;
+    accent: string;
   };
   btn: {
     primary: string;
@@ -24,6 +25,9 @@ interface Theme {
     secondary: string;
     tertiary: string;
   };
+  "input-color": {
+    primary: string;
+  };
 }
 
 const themes = {
@@ -37,6 +41,7 @@ const themes = {
       primary: "#484E61",
       secondary: "#FFF8FF",
       tertiary: "#FFFBF3",
+      accent: "#FFF8FF",
     },
     btn: {
       primary: "#EAE3DB",
@@ -53,6 +58,9 @@ const themes = {
       secondary: "#414E71",
       tertiary: "#8E2517",
     },
+    "input-color": {
+      primary: "#FFF8FF",
+    },
   },
   themeTwo: {
     background: {
@@ -64,6 +72,7 @@ const themes = {
       primary: "#37372E",
       secondary: "#FFFBF3",
       tertiary: "#FFFBF3",
+      accent: "#37372E",
     },
     btn: {
       primary: "#E5E4E0",
@@ -80,6 +89,9 @@ const themes = {
       secondary: "#1C6167",
       tertiary: "#893A02",
     },
+    "input-color": {
+      primary: "#37372E",
+    },
   },
   themeThree: {
     background: {
@@ -91,6 +103,7 @@ const themes = {
       primary: "#FFE63C",
       secondary: "#FFF8FF",
       tertiary: "#0C272F",
+      accent: "#FFE63C",
     },
     btn: {
       primary: "#331B4D",
@@ -106,6 +119,9 @@ const themes = {
       primary: "#851E9D",
       secondary: "#BF16F5",
       tertiary: "#68FCF2",
+    },
+    "input-color": {
+      primary: "#FFE63C",
     },
   },
 };
