@@ -1,0 +1,9 @@
+.header {
+  grid-column: 2 / 3;
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.875rem 2rem;
+  color: var(--text-accent);
+}
