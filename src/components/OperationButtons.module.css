@@ -1,0 +1,24 @@
+.btn-op {
+  color: var(--text-primary);
+  background-color: var(--btn-primary);
+  box-shadow: var(--btn-shadow-offset) var(--btn-shadow-primary);
+}
+
+.btn-op:hover {
+  background-color: var(--btn-hover-primary);
+}
+.btn-op--plus {
+  grid-area: plus;
+}
+
+.btn-op--minus {
+  grid-area: minus;
+}
+
+.btn-op--mult {
+  grid-area: mult;
+}
+
+.btn-op--div {
+  grid-area: div;
+}

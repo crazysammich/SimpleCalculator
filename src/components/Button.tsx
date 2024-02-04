@@ -2,8 +2,8 @@ import { ReactNode, MouseEventHandler } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-  value: string | number;
-  type?: "button" | "submit";
+  value?: string | number;
+  type?: "button" | "submit" | "reset";
   children?: ReactNode;
   className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;

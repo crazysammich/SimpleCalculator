@@ -1,6 +1,11 @@
 .btn-equal {
+  font-size: var(--font-size-secondary);
   grid-area: equal;
   color: var(--text-tertiary);
   background-color: var(--btn-tertiary);
   box-shadow: var(--btn-shadow-offset) var(--btn-shadow-tertiary);
+}
+
+.btn-equal:hover {
+  background-color: var(--btn-hover-tertiary);
 }

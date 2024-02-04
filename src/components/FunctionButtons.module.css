@@ -1,8 +1,19 @@
 .btn-fnc {
+  font-size: var(--font-size-secondary);
   color: var(--text-secondary);
-  text-transform: capitalize;
+  text-transform: uppercase;
   background-color: var(--btn-secondary);
   box-shadow: var(--btn-shadow-offset) var(--btn-shadow-secondary);
+}
+
+@media screen and (max-width: 31em) {
+  .btn-fnc {
+    --font-size-secondary: 1.25rem;
+  }
+}
+
+.btn-fnc:hover {
+  background-color: var(--btn-hover-secondary);
 }
 
 .btn-fnc--del {

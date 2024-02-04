@@ -1,8 +1,16 @@
 .btn {
-  cursor: pointer;
   outline: 0;
   border: 0;
   font-size: var(--font-size-primary);
-  border-radius: 5px;
-  padding: 1rem 2.5rem;
+  border-radius: var(--btn-border-radius);
+  padding-inline: 1.25rem;
+  padding-block: 0.5rem 0.25rem;
+}
+
+@media screen and (max-width: 31em) {
+  .btn {
+    --font-size-primary: 1.875rem;
+    --btn-border-radius: 5px;
+    padding-inline: 0;
+  }
 }
