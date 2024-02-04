@@ -1,16 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap");
 
 :root {
   --background-primary: #3b4664;
   --background-secondary: #252d44;
   --background-tertiary: #181f32;
 
-  --font-size-primary: 2rem;
-  --font-size-secondary: 0.625rem;
+  --root-font-size: 1rem;
+
+  --font-size-primary: 2.375rem;
+  --font-size-secondary: 1.5rem;
+  --font-size-tertiary: 0.625rem;
 
   --text-primary: #484e61;
   --text-secondary: #fff8ff;
   --text-tertiary: #181f32;
+  --text-accent: #fff8ff;
 
   /* button background color */
   --btn-primary: #eae3db;
@@ -30,6 +35,8 @@
   --btn-shadow-primary: #b6a49a;
   --btn-shadow-secondary: #414e71;
   --btn-shadow-tertiary: #8e2517;
+
+  --input-color-primary: #fff8ff;
   box-sizing: border-box;
   font-size: 1rem;
   font-family: "League Spartan", sans-serif;
