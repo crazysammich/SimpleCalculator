@@ -30,25 +30,25 @@
   background-color: var(--btn-tertiary);
 }
 
-.themes-switch-btn input {
-  appearance: none;
+.themes-switch-btn button {
   padding: 0.5rem;
   cursor: pointer;
   border-radius: 10px;
+  border: 0;
 }
-.themes-switch-btn input:hover {
+.themes-switch-btn button:hover {
   background-color: var(--btn-primary);
 }
 
-.themes-switch-btn > input:nth-of-type(1):checked ~ .slider {
+.slider[data-current-btn="theme-1"] {
   left: 10%;
 }
 
-.themes-switch-btn > input:nth-of-type(2):checked ~ .slider {
+.slider[data-current-btn="theme-2"] {
   left: 40%;
 }
 
-.themes-switch-btn input:nth-of-type(3):checked ~ .slider {
+.slider[data-current-btn="theme-3"] {
   left: 70%;
 }
 

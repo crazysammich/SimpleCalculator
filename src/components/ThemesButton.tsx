@@ -1,42 +1,38 @@
-import { ChangeEvent, Fragment, Dispatch, SetStateAction } from "react";
+import { Fragment, MouseEvent } from "react";
 import styles from "./ThemesButton.module.css";
 import { randkey } from "../utils";
-import themes from "../themes";
-interface ThemesButtonProps {
-  theme: string;
-  onThemeClick: Dispatch<SetStateAction<string>>;
-}
-function ThemesButton({ theme, onThemeClick }: ThemesButtonProps) {
-  const themesNames = getThemesNames(themes);
+import { useThemes } from "../hooks";
 
-  function handleThemeClick(e: ChangeEvent<HTMLInputElement>) {
-    onThemeClick(e.currentTarget.value);
+function ThemesButton() {
+  const { currentTheme, themesList, changeTheme } = useThemes();
+
+  function handleThemeClick(e: MouseEvent<HTMLButtonElement>) {
+    changeTheme(e.currentTarget.value);
   }
 
   return (
     <div className={styles["themes-switch-container"]}>
       <span>theme</span>
       <div className={styles["themes-switch-btn"]} role="switch">
-        {themesNames.map((name, i) => (
+        {themesList.map((name, i) => (
           <Fragment key={randkey()}>
             <label htmlFor={`theme-${i + 1}`}>{i + 1}</label>
-            <input
+            <button
               id={`theme-${i}`}
-              type="radio"
+              className={` ${currentTheme === name ? "active" : ""}`}
               name={`theme-radio-button`}
               value={name}
-              checked={theme === name}
-              onChange={handleThemeClick}
+              onClick={handleThemeClick}
             />
           </Fragment>
         ))}
-        <span className={styles.slider} aria-hidden="true"></span>
+        <span
+          className={styles.slider}
+          aria-hidden="true"
+          data-current-btn={currentTheme}
+        ></span>
       </div>
     </div>
   );
 }
 export default ThemesButton;
-
-function getThemesNames(themes: object) {
-  return Object.keys(themes).map((themeName) => themeName);
-}

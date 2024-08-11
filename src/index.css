@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap");
 
 :root {
-  --background-primary: #3b4664;
-  --background-secondary: #252d44;
-  --background-tertiary: #181f32;
-
   --root-font-size: 1rem;
 
   --font-size-primary: 2.375rem;
   --font-size-secondary: 1.5rem;
   --font-size-tertiary: 0.625rem;
+
+  --background-primary: #3b4664;
+  --background-secondary: #252d44;
+  --background-tertiary: #181f32;
 
   --text-primary: #484e61;
   --text-secondary: #fff8ff;
@@ -37,6 +37,7 @@
   --btn-shadow-tertiary: #8e2517;
 
   --input-color-primary: #fff8ff;
+
   box-sizing: border-box;
   font-size: 1rem;
   font-family: "League Spartan", sans-serif;
@@ -45,7 +46,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--background-primary);
 }
 
 button {
@@ -69,5 +69,115 @@ input {
   box-sizing: inherit;
 }
 
+body {
+  background-color: var(--background-primary);
+}
+
+body[data-theme="theme-1"] {
+  --background-primary: #3b4664;
+  --background-secondary: #252d44;
+  --background-tertiary: #181f32;
+
+  --text-primary: #484e61;
+  --text-secondary: #fff8ff;
+  --text-tertiary: #181f32;
+  --text-accent: #fff8ff;
+
+  /* button background color */
+  --btn-primary: #eae3db;
+  --btn-secondary: #647299;
+  --btn-tertiary: #d13f30;
+
+  /* button hover background color */
+  --btn-hover-primary: #ffffff;
+  --btn-hover-secondary: #a2b3e1;
+  --btn-hover-tertiary: #f96c5b;
+
+  /* button shadow position */
+  --btn-shadow-offset: 0 4px 0;
+  --btn-border-radius: 10px;
+
+  /* button shadow color */
+  --btn-shadow-primary: #b6a49a;
+  --btn-shadow-secondary: #414e71;
+  --btn-shadow-tertiary: #8e2517;
+
+  --input-color-primary: #fff8ff;
+}
+
+body[data-theme="theme-2"] {
+  --background-primary: #e6e6e6;
+  --background-secondary: #d3cdcd;
+  --background-tertiary: #eeeeee;
+
+  --text-primary: #37372e;
+  --text-secondary: #fffbf3;
+  --text-tertiary: #fffbf3;
+  --text-accent: #37372e;
+
+  --btn-primary: #e5e4e0;
+  --btn-secondary: #388187;
+  --btn-tertiary: #c65401;
+
+  --btn-shadow-primary: #a69f90;
+  --btn-shadow-secondary: #1c6167;
+  --btn-shadow-tertiary: #893a02;
+
+  --btn-hover-primary: #ffffff;
+  --btn-hover-secondary: #63b4bd;
+  --btn-hover-tertiary: #ff8b38;
+
+  --input-color-primary: #37372e;
+}
+
+body[data-theme="theme-3"] {
+  --background-primary: #17062a;
+  --background-secondary: #1e0836;
+  --background-tertiary: #1e0836;
+
+  --text-primary: #ffe63c;
+  --text-secondary: #fff8ff;
+  --text-tertiary: #0c272f;
+  --text-accent: #ffe63c;
+
+  --btn-primary: #331b4d;
+  --btn-secondary: #57067c;
+  --btn-tertiary: #00decf;
+
+  --btn-shadow-primary: #851e9d;
+  --btn-shadow-secondary: #bf16f5;
+  --btn-shadow-tertiary: #68fcf2;
+
+  --btn-hover-primary: #6b34ac;
+  --btn-hover-secondary: #8631af;
+  --btn-hover-tertiary: #94fff9;
+
+  --input-color-primary: #ffe63c;
+}
+
 @media (prefers-color-scheme: light) {
+  :root {
+    --background-primary: #e6e6e6;
+    --background-secondary: #d3cdcd;
+    --background-tertiary: #eeeeee;
+
+    --text-primary: #37372e;
+    --text-secondary: #fffbf3;
+    --text-tertiary: #fffbf3;
+    --text-accent: #37372e;
+
+    --btn-primary: #e5e4e0;
+    --btn-secondary: #388187;
+    --btn-tertiary: #c65401;
+
+    --btn-shadow-primary: #a69f90;
+    --btn-shadow-secondary: #1c6167;
+    --btn-shadow-tertiary: #893a02;
+
+    --btn-hover-primary: #ffffff;
+    --btn-hover-secondary: #63b4bd;
+    --btn-hover-tertiary: #ff8b38;
+
+    --input-color-primary: #37372e;
+  }
 }
