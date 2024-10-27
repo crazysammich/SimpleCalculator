@@ -5,15 +5,9 @@ interface CalculatorOutput {
 }
 
 function CalculatorOutput() {
-  const { previousOperand, currentOperand, currentOperation } = useCalculator();
+  const { buffer, result } = useCalculator();
+  const calcOutput = result ? result : buffer.join(" ");
 
-  const calcOutput = "".concat(
-    previousOperand,
-    " ",
-    currentOperation,
-    " ",
-    currentOperand
-  );
   return (
     <input
       className={styles["calc-output"]}

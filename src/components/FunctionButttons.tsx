@@ -4,28 +4,17 @@ import Button from "./Button";
 import { useCalculator } from "../context/CalculatorContext";
 
 function FunctionButtons() {
-  const {
-    currentOperand,
-    currentOperation,
-    setPreviousOperand,
-    setCurrentOperand,
-    setCurrentOperation,
-    resetCalculator,
-  } = useCalculator();
+  const { buffer, setBuffer, resetCalculator } = useCalculator();
 
   function handleOnFunctionBtnClick(e: MouseEvent<HTMLButtonElement>) {
     const fncName = e.currentTarget.value;
     if (fncName === "del") {
-      if (currentOperand.length > 0) {
-        setCurrentOperand((prevOperand) => prevOperand.slice(0, -1));
+      if (buffer.length > 0) {
+        setBuffer((buffer) => buffer.toSpliced(-1, 1));
       }
 
-      if (currentOperand.length === 0) {
-        setCurrentOperation((prevOperation) => prevOperation.slice(0, -1));
-      }
-
-      if (currentOperation.length === 0) {
-        setPreviousOperand((prevOperand) => prevOperand.slice(0, -1));
+      if (buffer.length <= 1) {
+        setBuffer(["0"]);
       }
     }
 
@@ -34,6 +23,7 @@ function FunctionButtons() {
       return;
     }
   }
+
   return (
     <Fragment>
       <Button

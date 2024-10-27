@@ -6,34 +6,25 @@ import { useCalculator } from "../context/CalculatorContext";
 
 function OperationButtons() {
   const operators = ["+", "-", "x", "/"];
-  const {
-    currentOperand,
-    currentOperation,
-    previousOperand,
-    setPreviousOperand,
-    setCurrentOperand,
-    setCurrentOperation,
-    setIsComputationSuccess,
-  } = useCalculator();
+  const { buffer, setBuffer, result, setResult } = useCalculator();
 
   function handleOperationBtnClick(e: MouseEvent<HTMLButtonElement>) {
     const operator = e.currentTarget.value;
-    if (currentOperation) {
-      const result = computeOperation(
-        previousOperand,
-        currentOperand,
-        currentOperation
-      );
+    const isBufferFull = buffer.length == 3;
 
-      setPreviousOperand(result);
-      setCurrentOperand("");
-      setCurrentOperation(operator);
+    setResult("");
+    if (result) {
+      setBuffer([result, operator]);
       return;
     }
-    setIsComputationSuccess(false);
-    setCurrentOperand("");
-    setPreviousOperand(currentOperand);
-    setCurrentOperation(operator);
+
+    if (isBufferFull) {
+      const result = computeOperation(buffer) ?? "0";
+      setBuffer([result, operator]);
+      return;
+    }
+
+    setBuffer((buffer) => [...buffer, operator]);
   }
 
   return operators.map((op) => {

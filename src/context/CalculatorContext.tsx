@@ -8,14 +8,10 @@ import {
 } from "react";
 
 interface CalculatorContextType {
-  currentOperand: string;
-  previousOperand: string;
-  currentOperation: string;
-  isComputationSuccess: boolean;
-  setCurrentOperand: Dispatch<SetStateAction<string>>;
-  setCurrentOperation: Dispatch<SetStateAction<string>>;
-  setPreviousOperand: Dispatch<SetStateAction<string>>;
-  setIsComputationSuccess: Dispatch<SetStateAction<boolean>>;
+  buffer: string[];
+  setBuffer: Dispatch<SetStateAction<string[]>>;
+  result: string;
+  setResult: Dispatch<SetStateAction<string>>;
   resetCalculator: () => void;
 }
 
@@ -25,27 +21,19 @@ interface CalculatorProviderProps {
   children?: ReactNode;
 }
 function CalculatorProvider({ children }: CalculatorProviderProps) {
-  const [currentOperation, setCurrentOperation] = useState("");
-  const [currentOperand, setCurrentOperand] = useState("0");
-  const [previousOperand, setPreviousOperand] = useState("");
-  const [isComputationSuccess, setIsComputationSuccess] = useState(false);
+  const [buffer, setBuffer] = useState<string[]>(["0"]);
+  const [result, setResult] = useState("");
 
   function resetCalculator() {
-    setIsComputationSuccess(false);
-    setPreviousOperand("");
-    setCurrentOperand("0");
-    setCurrentOperation("");
+    setResult("");
+    setBuffer(["0"]);
   }
 
   const ctxValue: CalculatorContextType = {
-    currentOperand,
-    previousOperand,
-    currentOperation,
-    isComputationSuccess,
-    setIsComputationSuccess,
-    setCurrentOperand,
-    setCurrentOperation,
-    setPreviousOperand,
+    buffer,
+    setBuffer,
+    result,
+    setResult,
     resetCalculator,
   };
 

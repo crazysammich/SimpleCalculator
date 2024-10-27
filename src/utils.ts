@@ -2,30 +2,27 @@ function randkey() {
   return Math.random().toString(16).slice(2);
 }
 
-function computeOperation(
-  prevOperand: string,
-  currOperand: string,
-  operator: string
-) {
+function computeOperation(buffer: string[]) {
   let operationResult = 0;
-  const prevOperandNum = parseFloat(prevOperand.replace(/,/g, ""));
-  const currOperandNum = parseFloat(currOperand.replace(/,/g, ""));
+  if (buffer.length <= 1) return buffer.at(0);
 
-  if (isNaN(prevOperandNum) && isNaN(currOperandNum)) {
-    return "";
-  }
+  const leftOperand = parseFloat(buffer[0].replace(/,/g, ""));
+  const rightOperand = parseFloat(buffer[2].replace(/,/g, ""));
+  const operator = buffer[1];
+
   switch (operator) {
     case "+":
-      operationResult = prevOperandNum + currOperandNum;
+      operationResult = leftOperand + rightOperand;
       break;
     case "-":
-      operationResult = prevOperandNum - currOperandNum;
+      operationResult = leftOperand - rightOperand;
       break;
     case "x":
-      operationResult = prevOperandNum * currOperandNum;
+      operationResult = leftOperand * rightOperand;
       break;
     case "/":
-      operationResult = prevOperandNum / currOperandNum;
+      if (rightOperand === 0) return "Cannot divide by zero";
+      operationResult = leftOperand / rightOperand;
       break;
     default:
       return "";

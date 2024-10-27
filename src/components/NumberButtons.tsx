@@ -6,30 +6,44 @@ import { useCalculator } from "../context/CalculatorContext";
 
 function NumberButtons() {
   const nums = [".", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const {
-    currentOperand,
-    setCurrentOperand,
-    isComputationSuccess,
-    setIsComputationSuccess,
-  } = useCalculator();
+  const { buffer, setBuffer, result, setResult } = useCalculator();
 
   function handleNumBtnClick(e: MouseEvent<HTMLButtonElement>) {
     const number = e.currentTarget.value;
-    if (currentOperand.includes(".") && number === ".") {
+
+    const doesPrevNumHasDecimal = /\./.test(buffer.at(-1)!) && number === ".";
+    const isNumRightOperand = /[^0-9.]/.test(buffer.at(-1)!);
+    const isInitialState = buffer.at(0) === "0" || result;
+
+    if (doesPrevNumHasDecimal) {
       return;
     }
-    if (number === "." && currentOperand === "0") {
-      setCurrentOperand((prevOperand) => prevOperand.concat(number));
+
+    if (isInitialState) {
+      if (number === ".") {
+        setBuffer([result.concat(".")]);
+      } else {
+        setBuffer([number]);
+      }
+      setResult("");
       return;
     }
-    if (currentOperand === "0" || isComputationSuccess) {
-      setIsComputationSuccess(false);
-      setCurrentOperand(number);
+
+    if (number === ".") {
+      setBuffer((buffer) => [...buffer, "0."]);
       return;
     }
-    setCurrentOperand((prevOperand) =>
-      formatNumWithComma(prevOperand.concat(number))
-    );
+
+    if (isNumRightOperand) {
+      setBuffer((buffer) => [...buffer, number]);
+      return;
+    }
+
+    setBuffer((buffer) => {
+      const tmpBuffer = buffer.slice();
+      const newNum = formatNumWithComma(tmpBuffer.pop()?.concat(number) ?? "");
+      return [...tmpBuffer, newNum];
+    });
   }
 
   return nums.map((n) => {
