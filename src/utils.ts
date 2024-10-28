@@ -30,31 +30,32 @@ function computeOperation(buffer: string[]) {
 
   return isNaN(operationResult)
     ? "Result is undefined"
-    : formatDecimal(operationResult);
+    : operationResult.toString();
 }
 
-function formatDecimal(num: number) {
-  return new Intl.NumberFormat("en", { style: "decimal" }).format(num);
-}
+// function formatDecimal(num: number) {
+//   return new Intl.NumberFormat("en", { style: "decimal" }).format(num);
+// }
 
-function formatNumWithComma(num: string | number) {
-  const stringNum = num.toString().replace(/,/g, "").split(".");
+function formatNumWithComma(num: string) {
+  const stringNum = num.replace(",", "").split(".");
   const intDigits = parseFloat(stringNum[0]);
   const decDigits = stringNum[1];
-  let intOutput = num;
+  let output = num;
 
   if (isNaN(intDigits)) {
-    intOutput = "";
+    output = "";
   } else {
-    intOutput = intDigits.toLocaleString("en-US");
+    output = new Intl.NumberFormat("en", { style: "decimal" }).format(
+      intDigits
+    );
   }
 
   if (decDigits != null) {
-    intOutput = intOutput.concat(".", decDigits);
-  } else {
-    return intOutput;
+    output = output.concat(".", decDigits);
   }
-  return intOutput;
+
+  return output;
 }
 
 export { randkey, formatNumWithComma, computeOperation };

@@ -24,6 +24,8 @@ function CalculatorProvider({ children }: CalculatorProviderProps) {
   const [buffer, setBuffer] = useState<string[]>(["0"]);
   const [result, setResult] = useState("");
 
+  console.log(buffer);
+
   function resetCalculator() {
     setResult("");
     setBuffer(["0"]);

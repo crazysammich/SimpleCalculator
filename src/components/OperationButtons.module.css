@@ -22,3 +22,7 @@
 .btn-op--div {
   grid-area: div;
 }
+
+.btn-op--dec {
+  grid-area: dec;
+}
